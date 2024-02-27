@@ -1,0 +1,209 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    transition: background 0.3s ease;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 10px;
+    background-color: #fefefe;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+    background-color: #e8e8e8;
+}
+
+.cell.X::before, .cell.O::before {
+    content: attr(data-marker);
+    font-size: 1em;
+}
+
+.cell.X::before {
+    color: #007bff;
+}
+
+.cell.O::before {
+    color: #28a745;
+}
+
+#status {
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #555;
+}
+
+#message {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #ffd4fe; 
+}
+
+.container, .cell, #restart-btn, #theme-toggle {
+    transition: all 0.3s ease;
+}
+
+#restart-btn:hover {
+    background-color: #c0392b; 
+    border-color: #a5281b; 
+}
+
+#restart-btn{
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    background-color: #e74c3c; 
+    color: #fff;
+    border: 2px solid #c0392b; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#restart-btn:hover, #theme-toggle:hover {
+    background-color: #c0392b; 
+    border-color: #a5281b; 
+}
+
+.win {
+    background-color: #fff !important;
+    transition: background-color 0.5s ease;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.dark-mode {
+    background: linear-gradient(to bottom right, #333, #000);
+    color: #fff;
+}
+
+.dark-mode .board {
+    background-color: #444;
+}
+
+.dark-mode .cell {
+    background-color: #555;
+    color: #fff;
+}
+
+.dark-mode .cell:hover {
+    background-color: #666;
+}
+
+.dark-mode .cell.X::before {
+    color: #3498db;
+}
+
+.dark-mode .cell.O::before {
+    color: #8e44ad;
+}
+
+.dark-mode #status, .dark-mode #message {
+    color: #555555;
+}
+
+.dark-mode #restart-btn, .dark-mode #theme-toggle {
+    background-color: #291332; 
+    border-color: #7d3c98; 
+}
+
+.dark-mode #restart-btn:hover, .dark-mode #theme-toggle:hover {
+    background-color: #291332; 
+    border-color: #7d3c98; 
+}
+
+@media only screen and (max-width: 600px) {
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5em;
+    }
+}
