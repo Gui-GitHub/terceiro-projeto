@@ -3,7 +3,7 @@
 ![print_projeto3](https://github.com/user-attachments/assets/181e2e98-af64-4199-807a-c4fa91a7f747)
 
 # Descrição do Projeto
-Projeto pessoal de jogo da velha, desenvolvido 100% por mim, via HTML5, CSS3 e JS, caso queira conhecer, acesse em: [site](https://gui-github.github.io/terceiro-projeto/)
+Projeto pessoal de Jogo da velha, desenvolvido 100% por mim, via HTML5, CSS3 e JS, caso queira conhecer, acesse em: [site](https://gui-github.github.io/terceiro-projeto/)
 
 # Funcionalidades
 Jogo da velha interativo. </br>
